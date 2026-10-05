@@ -9,7 +9,7 @@ public class Main {
         int moves = 5;
         int easy = 0;
         int hearts = 5;
-        System.out.println("before you start, you need to pick a difficulty, 1=easy 2=medium and 3=hard");
+        System.out.println("before you start, you need to pick a difficulty, 1=easy 2=medium 3=hard 4=insane 5=impossible 6=???");
         easy = scanner.nextInt(); 
         if(easy == 1) {
           System.out.println("you have chosen EASY difficulty. u dont want heat from hard dont u? only 1-10");
@@ -19,7 +19,22 @@ public class Main {
         } else if(easy == 3) {
           System.out.println("you have chosen HARD difficulty. OH WE BACK IN BUSINESS... 1-50");
           secretNumber = random.nextInt(50) +1;
+        }  else if(easy == 4) {
+          System.out.println("you have chosen INSANE difficulty. gng why you choose this?... 1-100");
+          secretNumber = random.nextInt(100) +1;
+          moves = 7;
         }
+        else if(easy == 5) {
+          System.out.println("you have chosen IMPOSSIBLE difficulty. give up... 1-250");
+          secretNumber = random.nextInt(250) +1;
+          moves = 9;
+        }
+        else if(easy == 6) {
+          System.out.println("you have chosen secret difficulty. win or lose for you... 1-2");
+          secretNumber = random.nextInt(2) +1;
+          moves = 1;
+        }
+        
         System.out.println("find my number, it goes from 1-25 mehehehehehe");
           while(userNumber != secretNumber && moves != 0) {
             System.out.println("put your number");
@@ -27,9 +42,9 @@ public class Main {
             moves = moves -1;
             System.out.println("you have " + moves + " moves left");
                       if (userNumber < secretNumber) {
-          System.out.println("the number you inputted is BIGGER than the number im thinking of MUAHAHAHA");
+          System.out.println("the number you put is bigger, try again");
         } else if (userNumber > secretNumber ) {
-          System.out.println("the number you inputted is less than the number im thinking of... 67676767");
+          System.out.println("the number you put is lower, try again");
         }
           if(userNumber == secretNumber) {
             System.out.println("WOW YOU ARE CORRECT NOW YOU HAVE BIG BRAIN");
